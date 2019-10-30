@@ -1,0 +1,60 @@
+:appNm: clipZ
+:svcAgent: svcAgent
+:svcAgentFul: Service provider's agent
+:svcUsr: svcUsr
+:svcUsrFull: Service user
+:orgAdm: orgAdm
+:orgAdmFull: Organisation administrator
+:svcOrg: svcOrg
+:svcOrgFull: Service provider organisation
+:svcEv: svcEv
+:svcEvFull: Service events
+:docVn: 0.1
+:docDt: 2019-10-30
+:title: Use Cases
+= {appNm} :: {title} [{docdt}/{docVn}]
+
+== Application stakeholders
+The application can be used by any of the following stakeholders, in a manner appropriate for their role
+
+* {orgAdmFull} ({orgAdm})
+* {svcAgentFull} ({svcAgent})
+* {svcUsrFull} ({svcUsr})
+
+== {orgAdmFull} use cases
+It is the responsibility of the {orgAdmFull} to configure the application, to setup the initial (only?) _{svcAgent}_ and to define the services to be provided and made available via {appNm}.
+
+.As an {orgAdmFull} I want to
+* Manage and maintain the {svcOrgFull}'s configuration
+** Register as a {svcOrgFull}
+** CRUD my registration details
+** Define the service provision time constraints, which are essential elements of the scheduling functionality, and comprise
+*** start / end dates
+*** working windows (eg M-F 9-5)
+*** max appts per {svcAgent} per day/wk/mth (or unlimited)
+*** min and max time between {svcEvFull}
+*** Service provision time slot (avg and max time allowed to deliver the service).
+
+* Manage and maintain the {svcOrgFull}'s agents
+** CRUD one or more {svcAgent} entities
+** Not have to select a {svcAgent} where only one such entity exists; that is, if this is a single person providing a service (eg a mobile hairdresser)
+** CRUD {svcAgent} downtime (for example for holidays and sickness)
+** CRUD {svcAgent} rate multipliers as appropriate (eg  discount for trainee, premium for senior agent)
+** For {svcOrgFull} with multiple {svcAgent} entities :
+*** (re)Activate a {svcAgent} to (re)enable their receipt of {svcUsr} appointments ({svcEv})
+*** (re)Activate a {svcAgent} to (re)enable their receipt of {svcUsr} appointments ({svcEv})
+*** De-activate a {svcAgent} to prevent them being allocated {svcUsr} appointments
+** View (and edit) {svcAgent} schedules
+** View {svcAgent} loading information (for example %age downtime, avg appt per period)
+
+* Track and manage {svcUsr} entities
+** Suspend and or re-activate a {svcUsr}
+** List, View and edit {svcUsr} appointments ({svcEv})
+
+* Track and manage {svcEv}
+** Identify any clashes or other issues including stats per the alerts below.
+** Receive alerts on:
+*** clashes (unresolved and (optionally) resolved )
+*** cancellations (including repeat cancellations and-or no-shows)
+*** unfulfillables (eg all {svcAgent} fully loaded)
+*** New recurring {svcEv} optionally.
