@@ -58,3 +58,7 @@ It is the responsibility of the {orgAdmFull} to configure the application, to se
 *** cancellations (including repeat cancellations and-or no-shows)
 *** unfulfillables (eg all {svcAgent} fully loaded)
 *** New recurring {svcEv} optionally.
+
+== {sysAgentFull} use cases
+
+== {sysUsrFull} use cases
