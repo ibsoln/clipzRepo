@@ -59,6 +59,6 @@ It is the responsibility of the {orgAdmFull} to configure the application, to se
 *** unfulfillables (eg all {svcAgent} fully loaded)
 *** New recurring {svcEv} optionally.
 
-== {sysAgentFull} use cases
+== {svcAgentFull} use cases
 
-== {sysUsrFull} use cases
+== {svcUsrFull} use cases
